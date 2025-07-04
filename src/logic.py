@@ -7,11 +7,12 @@ class Match:
                     [2, 5, 8],
                     [0, 4, 8],
                     [2, 4, 6]]
+    
     def __init__(self):
        self.moves = [" ", " ", " ",
                      " ", " ", " ",
                      " ", " ", " "]
-        
+    
     def player_x(self, move):
         try:
             if self.moves[int(move) - 1] == " " and int(move) < 10:
@@ -32,10 +33,11 @@ class Match:
         except IndexError:
             return False
     
-    def check_win(self, player): # Todo
+    def check_result(self, player):
         if self.moves.count(" ") <= 4:
             for i in self.wining_patterns:
                 if self.moves[i[0]] == player and self.moves[i[1]] == player and self.moves[i[2]] == player:
-                    return True
-            else:
-                return False
+                    return f"Player {player} wins!"
+            if self.moves.count(" ") == 0:
+                return "Draw"
+            

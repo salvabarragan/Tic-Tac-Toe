@@ -12,8 +12,7 @@ while not game_over:
         if not game.player_x(input("X moves: ")):
             continue
         else:
-            if game.check_win("X"):
-                os.system('cls')
+            if game.check_result("X"):
                 print(game.show_board())
                 input("Player X wins!")
                 game_over = True
@@ -22,12 +21,11 @@ while not game_over:
     if game_over:
         break
     while True:
-        os.system('cls')
         print(game.show_board())
         if not game.player_o(input("O moves: ")):
             continue
         else:
-            if game.check_win("O"):
+            if game.check_result("O"):
                 os.system('cls')
                 print(game.show_board())
                 input("Player O wins!")
