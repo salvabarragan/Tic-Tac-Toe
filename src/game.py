@@ -12,9 +12,14 @@ while not game_over:
         if not game.player_x(input("X moves: ")):
             continue
         else:
-            if game.check_result("X"):
+            if game.check_result("X") == 1:
                 print(game.show_board())
                 input("Player X wins!")
+                game_over = True
+                break
+            elif game.check_result("X") == 2:
+                print(game.show_board())
+                input("There is a draw. ")
                 game_over = True
                 break
             break
@@ -25,7 +30,7 @@ while not game_over:
         if not game.player_o(input("O moves: ")):
             continue
         else:
-            if game.check_result("O"):
+            if game.check_result("O") == 1:
                 os.system('cls')
                 print(game.show_board())
                 input("Player O wins!")

@@ -1,5 +1,5 @@
 class Match:
-    wining_patterns = [[0, 1, 2],
+    winning_patterns = [[0, 1, 2],
                     [3, 4, 5],
                     [6, 7, 8],
                     [0, 3, 6],
@@ -37,7 +37,7 @@ class Match:
         if self.moves.count(" ") <= 4:
             for i in self.wining_patterns:
                 if self.moves[i[0]] == player and self.moves[i[1]] == player and self.moves[i[2]] == player:
-                    return f"Player {player} wins!"
+                    return 1
             if self.moves.count(" ") == 0:
-                return "Draw"
+                return 2
             
