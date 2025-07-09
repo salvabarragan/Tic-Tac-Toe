@@ -35,7 +35,7 @@ class Match:
     
     def check_result(self, player):
         if self.moves.count(" ") <= 4:
-            for i in self.wining_patterns:
+            for i in self.winning_patterns:
                 if self.moves[i[0]] == player and self.moves[i[1]] == player and self.moves[i[2]] == player:
                     return 1
             if self.moves.count(" ") == 0:

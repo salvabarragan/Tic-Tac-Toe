@@ -69,7 +69,8 @@ class TestMatch(unittest.TestCase):
         self.match.moves = ["X", "X", "O",
                             "O", "O", "X",
                             "X", "O", "X"]
-        self.assertEqual(self.match.check_result("X"), "Draw")
+        self.assertEqual(self.match.check_result("X"), 2)
+        # "2" means "Draw", but it is shown in game.py
        
 
 if __name__ == '__main__':
